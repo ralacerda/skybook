@@ -1,6 +1,23 @@
 :root {
   --fg: #e3e3e3;
-  --bg: #1f1f1f;
-  --bg-secondary: #242424;
+  --fg-secondary: #acacac;
+  --bg: #242424;
+  --bg-secondary: #2e2e2e;
+  --bg-accent: #3b3b3b;
+  --bg-dark: #1b1b1b;
   --primary: #4871c6;
+
+  --font-md: 0.8rem;
+  --font-sm: 0.75rem;
+  --font-lg: 1rem;
+  --font-xl: 2rem;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --font-md: 1rem;
+    --font-sm: 0.8rem;
+    --font-lg: 1.2rem;
+    --font-xl: 3rem;
+  }
 }

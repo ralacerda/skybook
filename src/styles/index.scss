@@ -4,13 +4,13 @@
 
 :root {
   color: var(--fg);
-  background-color: var(--bg);
+  background-color: var(--bg-dark);
 }
 
 #app {
-  width: min(100% - 3rem, 90ch);
+  width: min(100% - 3rem, 120ch);
   margin-inline: auto;
-  padding-block: 3rem;
+  padding-block: 1rem 1rem;
   height: 100vh;
   height: 100dvh;
   display: grid;
@@ -18,7 +18,13 @@
 }
 
 main {
+  display: grid;
+  grid-template-rows: auto 1fr;
   overflow-y: scroll;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  margin-block: 1rem;
+  background-color: var(--bg);
 
   // Estilo da scrollbar para firefox
   scrollbar-color: var(--primary) var(--bg);
@@ -26,11 +32,6 @@ main {
   // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
   &::-webkit-scrollbar {
     width: 3px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--bg);
-    border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
