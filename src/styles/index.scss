@@ -1,0 +1,8 @@
+@import "reset";
+@import "utils";
+@import "variables";
+
+:root {
+  color: var(--fg);
+  background-color: var(--bg);
+}
