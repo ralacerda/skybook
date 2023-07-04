@@ -16,9 +16,3 @@
 .flow > * + * {
   margin-top: var(--flow-space, 1em);
 }
-
-.container {
-  width: min(100% - 3rem, 90ch);
-  margin-inline: auto;
-  padding-block: 3rem;
-}
