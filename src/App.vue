@@ -9,6 +9,7 @@ const contactsStore = useContactsStore();
     <h1>Skybook</h1>
   </header>
   <main>
+    <h2>Contatos</h2>
     <ul class="contact-list">
       <li class="contact-info" v-for="contact in contactsStore.list">
         <div class="contact-name">{{ contact.name }}</div>

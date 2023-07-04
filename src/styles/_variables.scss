@@ -1,11 +1,13 @@
 :root {
-  --fg: #e3e3e3;
+  --fg-primary: #e3e3e3;
   --fg-secondary: #acacac;
-  --bg: #242424;
+
+  --bg-dark: #1b1b1b;
+  --bg-primary: #242424;
   --bg-secondary: #2e2e2e;
   --bg-accent: #3b3b3b;
-  --bg-dark: #1b1b1b;
-  --primary: #4871c6;
+
+  --brand-primary: #4871c6;
 
   --font-md: 0.8rem;
   --font-sm: 0.75rem;

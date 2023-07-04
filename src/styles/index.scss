@@ -3,7 +3,7 @@
 @import "variables";
 
 :root {
-  color: var(--fg);
+  color: var(--fg-primary);
   background-color: var(--bg-dark);
 }
 
@@ -21,13 +21,12 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   overflow-y: scroll;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 0.7rem;
   margin-block: 1rem;
-  background-color: var(--bg);
 
   // Estilo da scrollbar para firefox
-  scrollbar-color: var(--primary) var(--bg);
+  scrollbar-color: var(--brand-primary) var(--bg-primary);
 
   // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
   &::-webkit-scrollbar {
@@ -35,7 +34,7 @@ main {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--primary);
+    background: var(--brand-primary);
     border-radius: 10px;
   }
 }
