@@ -40,6 +40,10 @@ import DeleteIcon from "~icons/mdi/delete";
     &:hover {
       color: var(--brand-secondary);
     }
+
+    &[data-delete]:hover {
+      color: var(--danger-secondary);
+    }
   }
 }
 </style>
