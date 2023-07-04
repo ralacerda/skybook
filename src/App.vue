@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LocationBar from "./components/LocationBar.vue";
 import { useContactsStore } from "./store/contactsStore";
 
 const contactsStore = useContactsStore();
@@ -9,7 +10,7 @@ const contactsStore = useContactsStore();
     <h1>Skybook</h1>
   </header>
   <main>
-    <h2>Contatos</h2>
+    <LocationBar />
     <ul class="contact-list">
       <li class="contact-info" v-for="contact in contactsStore.list">
         <div class="contact-name">{{ contact.name }}</div>
@@ -23,15 +24,6 @@ const contactsStore = useContactsStore();
 <style scoped lang="scss">
 h1 {
   font-size: var(--font-xl);
-}
-
-h2 {
-  font-size: var(--font-lg);
-  padding-block: 1em;
-  text-align: center;
-  border-radius: 0.5rem;
-  background-color: var(--bg-secondary);
-  margin-bottom: 1em;
 }
 
 .contact-list {
