@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useContactsStore } from "../store/contactsStore";
 import LocationBar from "../components/LocationBar.vue";
+import PhoneIcon from "~icons/mdi/phone";
+import EmailIcon from "~icons/mdi/email";
+import EditIcon from "~icons/mdi/pencil";
+import DeleteIcon from "~icons/mdi/delete";
 
 const contactsStore = useContactsStore();
 </script>
@@ -9,10 +13,26 @@ const contactsStore = useContactsStore();
   <main>
     <LocationBar />
     <ul class="contact-list">
-      <li class="contact-info" v-for="contact in contactsStore.list">
-        <div class="contact-name">{{ contact.name }}</div>
-        <div class="contact-phone">{{ contact.phone }}</div>
-        <div class="contact-email">{{ contact.email }}</div>
+      <li class="contact-row" v-for="contact in contactsStore.list">
+        <div class="contact-info">
+          <div class="contact-name">{{ contact.name }}</div>
+          <div class="contact-phone">{{ contact.phone }}</div>
+          <div class="contact-email">{{ contact.email }}</div>
+        </div>
+        <div class="contact-actions">
+          <button>
+            <PhoneIcon />
+          </button>
+          <button>
+            <EmailIcon />
+          </button>
+          <button>
+            <EditIcon />
+          </button>
+          <button>
+            <DeleteIcon />
+          </button>
+        </div>
       </li>
     </ul>
   </main>
@@ -23,7 +43,30 @@ const contactsStore = useContactsStore();
   list-style: none;
 }
 
-.contact-info {
+.contact-actions {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-lg);
+
+  button {
+    // Centralizando icone dentro do botão
+    display: grid;
+    place-items: center;
+
+    // Incluindo padding para aumentar a área de interação
+    padding: 0.5rem 0.5rem;
+    color: var(--fg-dark);
+
+    &:hover {
+      color: var(--brand-primary);
+    }
+  }
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: var(--font-md);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;

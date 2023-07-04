@@ -1,6 +1,7 @@
 :root {
   --fg-primary: #e3e3e3;
   --fg-secondary: #acacac;
+  --fg-dark: #626262;
 
   --bg-dark: #1b1b1b;
   --bg-primary: #242424;
@@ -12,7 +13,7 @@
 
   --font-md: 0.8rem;
   --font-sm: 0.75rem;
-  --font-lg: 1.2rem;
+  --font-lg: 1.3rem;
   --font-xl: 2rem;
 }
 
@@ -20,7 +21,7 @@
   :root {
     --font-md: 1rem;
     --font-sm: 0.8rem;
-    --font-lg: 1.5rem;
+    --font-lg: 1.6rem;
     --font-xl: 3rem;
   }
 }
