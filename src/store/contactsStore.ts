@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 import type { Contact } from "../types";
 
 const url = "https://jsonplaceholder.typicode.com/users";
-// const url = "https://httpstat.us/404";
+// Utilize o link abaixo para similar erros na API
+// const url = "https://httpstat.us/500";
 
 async function fetchContacts() {
   try {
