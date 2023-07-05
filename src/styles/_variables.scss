@@ -20,6 +20,8 @@
   --font-sm: 0.75rem;
   --font-lg: 1.3rem;
   --font-xl: 2rem;
+
+  --app-width: min(100% - 1.5rem, 90ch);
 }
 
 @media (min-width: 600px) {

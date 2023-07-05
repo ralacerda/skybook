@@ -16,7 +16,7 @@
 
 .push-in-enter-from,
 .pop-out-leave-to {
-  transform: translateX(720px);
+  transform: translateX(var(--app-width));
 }
 
 .push-in-leave-active,
