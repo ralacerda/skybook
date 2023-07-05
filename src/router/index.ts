@@ -53,4 +53,10 @@ const router = createRouter({
   routes,
 });
 
+router.afterEach((to, from) => {
+  const toDepth = to.meta.depth;
+  const fromDepth = from.meta.depth;
+  to.meta.transition = toDepth > fromDepth ? "push-in" : "pop-out";
+});
+
 export default router;

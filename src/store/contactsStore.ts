@@ -11,7 +11,7 @@ async function fetchContacts() {
 
     if (!result.ok) {
       return {
-        error: `Response Error: Code ${result.status}`,
+        error: `Erro na Resposta: Code ${result.status}`,
         list: [],
       };
     }

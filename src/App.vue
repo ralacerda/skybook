@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import { useContactsStore } from "./store/contactsStore";
-import { useRouter } from "vue-router";
 import TheHeader from "./components/TheHeader.vue";
-
-const router = useRouter();
-
-router.afterEach((to, from) => {
-  const toDepth = to.meta.depth;
-  const fromDepth = from.meta.depth;
-  to.meta.transition = toDepth > fromDepth ? "push-in" : "pop-out";
-});
 
 const contactsStore = useContactsStore();
 </script>
