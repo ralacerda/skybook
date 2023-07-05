@@ -9,18 +9,23 @@
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   padding-right: 1rem;
 
-  a:hover {
-    text-decoration: underline;
+  a {
+    @include hover-style {
+      text-decoration: underline;
+    }
   }
 }
 
 .header-links a {
   margin-left: 1rem;
+  white-space: nowrap;
 }
 </style>

@@ -24,6 +24,8 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 .contact-row {
   display: flex;
   justify-content: space-between;
@@ -35,7 +37,7 @@ defineProps<{
   line-height: 1.4;
   cursor: pointer;
 
-  &:hover {
+  @include hover-style {
     background-color: var(--bg-accent);
   }
 }
@@ -45,7 +47,16 @@ li:not(:last-of-type) {
 }
 
 .contact-info {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info > * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .contact-phone,

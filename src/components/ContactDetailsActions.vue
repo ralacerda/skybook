@@ -20,6 +20,8 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 .contact-actions {
   display: flex;
   align-items: center;
@@ -34,7 +36,7 @@ defineProps<{
     padding: 0.5rem 0.5rem;
     color: var(--fg-dark);
 
-    &:hover {
+    @include hover-style {
       color: var(--brand-secondary);
     }
 

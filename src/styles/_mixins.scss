@@ -1,0 +1,16 @@
+// Esse mixin é utilizado para evitar que os efeitos de hover
+// sejam aplicados no Android. Isso impede o comportamento
+// de mostrar os efeitos de hover após um click
+@mixin hover-style {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media not all and (hover: hover) and (pointer: fine) {
+    &:active {
+      @content;
+    }
+  }
+}

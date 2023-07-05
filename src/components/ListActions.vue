@@ -52,7 +52,7 @@ defineEmits(["update:search", "update:sorting"]);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.2rem 1rem;
+  gap: 0.75rem 1rem;
   flex-wrap: wrap;
 
   select {

@@ -35,6 +35,8 @@ function deleteContact(id: number) {
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 .contact-actions {
   display: flex;
   align-items: center;
@@ -45,17 +47,20 @@ function deleteContact(id: number) {
     // Centralizando icone dentro do botão
     display: grid;
     place-items: center;
+    transition: color 0.15s;
 
     // Incluindo padding para aumentar a área de interação
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.3em;
     color: var(--fg-dark);
 
-    &:hover {
+    @include hover-style {
       color: var(--brand-secondary);
     }
 
-    &[data-delete]:hover {
-      color: var(--danger-dark);
+    &[data-delete] {
+      @include hover-style {
+        color: var(--danger-dark);
+      }
     }
   }
 }
