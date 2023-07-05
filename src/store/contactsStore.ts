@@ -40,5 +40,10 @@ export const useContactsStore = defineStore("contacts", {
     removeById(id: number) {
       this.list = this.list.filter((contact: Contact) => contact.id != id);
     },
+    updateById(id: number, newValue: Contact) {
+      // Aqui o assign() faz o papel de mudar o valor
+      // das chaves, adicionando as que faltam
+      Object.assign(this.getContactById(id), newValue);
+    },
   },
 });

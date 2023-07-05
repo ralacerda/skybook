@@ -2,6 +2,7 @@
 @import "utils";
 @import "variables";
 @import "transitions";
+@import "formkit";
 
 :root {
   color: var(--fg-primary);
@@ -35,4 +36,15 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--fg-secondary),
+    transparent 40%
+  );
+  opacity: 0.1;
 }

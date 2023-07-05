@@ -5,7 +5,17 @@ export type Contact = {
   name: string;
   email: string;
   phone: string;
-  [key: string]: string | number | undefined;
+  company: {
+    name: string;
+  };
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+  };
+  username: string;
+  website: string;
 };
 
 declare module "vue-router" {

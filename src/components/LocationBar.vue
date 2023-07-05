@@ -6,6 +6,7 @@ defineProps<{
   name: string;
   action: string;
   backButton?: RouteLocationRaw;
+  actionDisabled?: boolean;
 }>();
 
 defineEmits(["actionClicked"]);
@@ -19,7 +20,11 @@ defineEmits(["actionClicked"]);
         {{ name }}
       </h2>
     </div>
-    <button class="location-action" @click="$emit('actionClicked')">
+    <button
+      class="location-action"
+      @click="$emit('actionClicked')"
+      :disabled="actionDisabled"
+    >
       {{ action }}
     </button>
   </div>
@@ -43,8 +48,13 @@ defineEmits(["actionClicked"]);
   border-radius: 0.4rem;
   transition: background-color 0.2s;
 
-  &:hover {
+  &:hover:not([disabled]) {
     background-color: var(--brand-secondary);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 

@@ -31,7 +31,7 @@ function editContact() {
     <LocationBar
       name="Detalhes"
       action="Editar"
-      back-button="/"
+      backButton="/"
       @actionClicked="editContact"
     />
     <div class="main-details">
@@ -96,17 +96,6 @@ function editContact() {
   }
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    var(--fg-secondary),
-    transparent 40%
-  );
-  opacity: 0.1;
-}
-
 .detail-title {
   font-weight: bold;
 }
@@ -117,19 +106,5 @@ hr {
 
 .value {
   margin-left: 0.2ch;
-}
-
-.delete-button {
-  background-color: transparent;
-  color: var(--danger-secondary);
-  border: 1px solid var(--danger-secondary);
-  padding: 0.3rem 0.7rem;
-  border-radius: 0.4rem;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: var(--danger-secondary);
-    color: var(--bg-secondary);
-  }
 }
 </style>

@@ -1,0 +1,38 @@
+.formkit-outer {
+  margin-bottom: 1rem;
+}
+
+.formkit-label {
+  font-size: var(--font-sm);
+  color: var(--fg-secondary);
+}
+
+.formkit-input {
+  display: block;
+  width: 100%;
+  font-size: var(--font-md);
+  font: inherit;
+  background-color: var(--bg-accent);
+  color: var(--fg-primary);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+
+  &:focus {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: -2px;
+  }
+}
+
+.formkit-messages {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+#name-rule_required {
+  color: var(--danger-primary);
+}
+
+#email-rule_email {
+  color: var(--warning-primary);
+}

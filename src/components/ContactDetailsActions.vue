@@ -39,10 +39,6 @@ defineProps<{
     @include hover-style {
       color: var(--brand-secondary);
     }
-
-    &[data-delete]:hover {
-      color: var(--danger-secondary);
-    }
   }
 }
 </style>
