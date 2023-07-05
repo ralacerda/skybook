@@ -39,6 +39,11 @@ defineProps<{
     @include hover-style {
       color: var(--brand-secondary);
     }
+
+    &[disabled="true"] {
+      opacity: 0.2;
+      pointer-events: none;
+    }
   }
 }
 </style>

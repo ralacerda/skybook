@@ -62,6 +62,11 @@ function deleteContact(id: number) {
         color: var(--danger-dark);
       }
     }
+
+    &[disabled="true"] {
+      opacity: 0.2;
+      pointer-events: none;
+    }
   }
 }
 </style>
