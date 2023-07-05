@@ -35,7 +35,7 @@ export const useContactsStore = defineStore("contacts", {
       if (!foundContact) {
         throw new Error("Contact ID not found");
       }
-      return foundContact;
+      return foundContact as Contact;
     },
   },
 });
