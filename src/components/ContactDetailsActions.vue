@@ -1,36 +1,21 @@
 <script setup lang="ts">
 import PhoneIcon from "~icons/mdi/phone";
 import EmailIcon from "~icons/mdi/email";
-import EditIcon from "~icons/mdi/pencil";
-import DeleteIcon from "~icons/mdi/delete";
-import type { Contact } from "../types";
-import { useContactsStore } from "../store/contactsStore";
 
 defineProps<{
-  contact: Contact;
+  phone: string;
+  email: string;
 }>();
-
-const contactsStore = useContactsStore();
-
-function deleteContact(id: number) {
-  contactsStore.removeById(id);
-}
 </script>
 
 <template>
   <div class="contact-actions">
-    <a :href="`tel:${contact.phone}`" :disabled="!contact.phone">
+    <a :href="`tel:${phone}`" :disabled="!phone">
       <PhoneIcon />
     </a>
-    <a :href="`mailto:${contact.email}`" :disabled="!contact.email">
+    <a :href="`mailto:${email}`" :disabled="!email">
       <EmailIcon />
     </a>
-    <button>
-      <EditIcon />
-    </button>
-    <button data-delete @click="deleteContact(contact.id)">
-      <DeleteIcon />
-    </button>
   </div>
 </template>
 
@@ -40,7 +25,6 @@ function deleteContact(id: number) {
   align-items: center;
   font-size: var(--font-lg);
 
-  button,
   a {
     // Centralizando icone dentro do botão
     display: grid;
@@ -55,7 +39,7 @@ function deleteContact(id: number) {
     }
 
     &[data-delete]:hover {
-      color: var(--danger-dark);
+      color: var(--danger-secondary);
     }
   }
 }
