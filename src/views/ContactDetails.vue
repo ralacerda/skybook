@@ -17,7 +17,7 @@ const { name, email, phone, id: _, ...otherDetails } = contactDetails;
 
 <template>
   <main>
-    <LocationBar name="Detalhes" action="Editar" back-button />
+    <LocationBar name="Detalhes" action="Editar" back-button="/" />
     <ContactRow :contact="contactDetails" />
 
     <div v-for="(value, key) in otherDetails" :key="key">

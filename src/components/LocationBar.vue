@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import BackIcon from "~icons/mdi/arrow-left";
+import type { RouteLocationRaw } from "vue-router";
 
 defineProps<{
   name: string;
   action: string;
-  backButton?: boolean;
+  backButton?: RouteLocationRaw;
 }>();
 </script>
 
 <template>
   <div class="location-bar">
     <div class="location-name">
-      <button @click="$router.back()" v-if="backButton"><BackIcon /></button>
+      <RouterLink v-if="backButton" :to="backButton"><BackIcon /></RouterLink>
       <h2>
         {{ name }}
       </h2>
@@ -48,7 +49,7 @@ defineProps<{
   gap: 1rem;
   align-items: center;
 
-  button {
+  a {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
