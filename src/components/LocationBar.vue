@@ -1,7 +1,14 @@
+<script setup lang="ts">
+defineProps<{
+  name: string;
+  action: string;
+}>();
+</script>
+
 <template>
   <div class="location-bar">
-    <h2 class="location-name">Contatos</h2>
-    <button class="location-action">Novo Contato</button>
+    <h2 class="location-name">{{ name }}</h2>
+    <button class="location-action">{{ action }}</button>
   </div>
 </template>
 

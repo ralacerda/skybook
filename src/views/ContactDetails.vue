@@ -12,8 +12,6 @@ const contactDetails = contactsStore.getContactById(id);
 
 <template>
   <main>
-    <LocationBar />
-    <h1>Here we have the details</h1>
-    <pre>{{ contactDetails }}</pre>
+    <LocationBar name="Detalhes" action="Editar" />
   </main>
 </template>

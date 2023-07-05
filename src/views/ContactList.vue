@@ -26,7 +26,7 @@ const computedList = computed(() => {
 
 <template>
   <main>
-    <LocationBar />
+    <LocationBar name="Contatos" action="Novo Contato" />
     <ListActions v-model:search="search" v-model:sorting="sorting" />
     <div class="contact-list">
       <ul>
