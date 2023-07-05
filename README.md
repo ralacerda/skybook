@@ -4,7 +4,7 @@
 
 [https://skybook-contacts.netlify.app/](https://skybook-contacts.netlify.app/)
 
-![Netlify](https://img.shields.io/netlify/88927678-709a-4980-a9ba-f59f4e6d010f)
+![Netlify](https://img.shields.io/netlify/88927678-709a-4980-a9ba-f59f4e6d010f) ![License](https://img.shields.io/github/license/ralacerda/skybook?color=#4DC71F)
 
 ![Screenshot][screenshot]
 
@@ -35,7 +35,7 @@ Para criar a build e iniciar uma preview, pare o servidor de desenvolvimento e e
 npm run build && npm run preview
 ```
 
-O preview estará disponível em [http://localhost:5173/](http://localhost:4173/)
+O preview estará disponível em [http://localhost:4173/](http://localhost:4173/)
 
 ## Ferramentas utilizadas
 
