@@ -17,27 +17,20 @@ defineProps<{
     <ContactDetailsActions :email="contact.email" :phone="contact.phone" />
   </div>
   <div class="other-details">
-    <div>
-      <div class="key">Nome de Usuário</div>
-      <div class="value">{{ contact.username }}</div>
-    </div>
-    <div>
-      <div class="key">Website</div>
-      <div class="value">
-        {{ contact.website }}
-      </div>
-    </div>
-    <div>
-      <div class="key">Companhia</div>
-      <div class="value">{{ contact.company.name }}</div>
-    </div>
-    <div>
-      <div class="key">Endereço</div>
-      <div>{{ contact.address.street }}</div>
-      <div>{{ contact.address.suite }}</div>
-      <div>{{ contact.address.city }}</div>
-      <div>{{ contact.address.zipcode }}</div>
-    </div>
+    <div class="key">Nome de Usuário</div>
+    <div>{{ contact.username }}</div>
+
+    <div class="key">Website</div>
+    <div>{{ contact.website }}</div>
+
+    <div class="key">Companhia</div>
+    <div>{{ contact.company.name }}</div>
+
+    <div class="key">Endereço</div>
+    <div>{{ contact.address.street }}</div>
+    <div>{{ contact.address.suite }}</div>
+    <div>{{ contact.address.city }}</div>
+    <div>{{ contact.address.zipcode }}</div>
   </div>
 </template>
 
@@ -65,26 +58,14 @@ defineProps<{
 
 .other-details {
   font-size: var(--font-sm);
-
-  // Seleciona descendentes diretos excluindo o primeiro
-  & > * + * {
-    margin-top: 0.5rem;
-  }
-
-  & > * > * + * {
-    margin-top: 0.2rem;
-  }
-}
-
-.detail-title {
-  font-weight: bold;
 }
 
 .key {
   color: var(--fg-secondary);
-}
+  margin-bottom: 0.2rem;
 
-.value {
-  margin-left: 0.2ch;
+  &:not(:first-child) {
+    margin-top: 0.5rem;
+  }
 }
 </style>
