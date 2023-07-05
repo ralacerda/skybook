@@ -30,12 +30,15 @@ export const useContactsStore = defineStore("contacts", {
   actions: {
     getContactById(id: number) {
       const foundContact = this.list.find(
-        (contact: Contact) => contact.id === id
+        (contact: Contact) => contact.id == id
       );
       if (!foundContact) {
         throw new Error("Contact ID not found");
       }
       return foundContact as Contact;
+    },
+    removeById(id: number) {
+      this.list = this.list.filter((contact: Contact) => contact.id != id);
     },
   },
 });

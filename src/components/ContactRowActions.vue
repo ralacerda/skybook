@@ -3,20 +3,32 @@ import PhoneIcon from "~icons/mdi/phone";
 import EmailIcon from "~icons/mdi/email";
 import EditIcon from "~icons/mdi/pencil";
 import DeleteIcon from "~icons/mdi/delete";
+import type { Contact } from "../types";
+import { useContactsStore } from "../store/contactsStore";
+
+defineProps<{
+  contact: Contact;
+}>();
+
+const contactsStore = useContactsStore();
+
+function deleteContact(id: number) {
+  contactsStore.removeById(id);
+}
 </script>
 
 <template>
   <div class="contact-actions">
-    <button>
+    <a :href="`tel:${contact.phone}`" :disabled="!contact.phone">
       <PhoneIcon />
-    </button>
-    <button>
+    </a>
+    <a :href="`mailto:${contact.email}`" :disabled="!contact.email">
       <EmailIcon />
-    </button>
+    </a>
     <button>
       <EditIcon />
     </button>
-    <button data-delete>
+    <button data-delete @click="deleteContact(contact.id)">
       <DeleteIcon />
     </button>
   </div>
@@ -28,7 +40,8 @@ import DeleteIcon from "~icons/mdi/delete";
   align-items: center;
   font-size: var(--font-lg);
 
-  button {
+  button,
+  a {
     // Centralizando icone dentro do botão
     display: grid;
     place-items: center;

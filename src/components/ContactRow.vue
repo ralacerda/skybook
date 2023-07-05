@@ -9,17 +9,17 @@ defineProps<{
 
 <template>
   <li>
-    <router-link
-      :to="{ name: 'details', params: { id: contact.id } }"
-      class="contact-row"
-    >
-      <div class="contact-info">
+    <div class="contact-row">
+      <RouterLink
+        :to="{ name: 'details', params: { id: contact.id } }"
+        class="contact-info"
+      >
         <div class="contact-name">{{ contact.name }}</div>
         <div class="contact-phone">{{ contact.phone }}</div>
         <div class="contact-email">{{ contact.email }}</div>
-      </div>
-      <ContactRowActions />
-    </router-link>
+      </RouterLink>
+      <ContactRowActions :contact="contact" />
+    </div>
   </li>
 </template>
 
@@ -42,6 +42,10 @@ defineProps<{
 
 li:not(:last-of-type) {
   margin-bottom: 1em;
+}
+
+.contact-info {
+  flex-grow: 1;
 }
 
 .contact-phone,
