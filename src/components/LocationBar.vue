@@ -1,13 +1,21 @@
 <script setup lang="ts">
+import BackIcon from "~icons/mdi/arrow-left";
+
 defineProps<{
   name: string;
   action: string;
+  backButton?: boolean;
 }>();
 </script>
 
 <template>
   <div class="location-bar">
-    <h2 class="location-name">{{ name }}</h2>
+    <div class="location-name">
+      <button @click="$router.back()" v-if="backButton"><BackIcon /></button>
+      <h2>
+        {{ name }}
+      </h2>
+    </div>
     <button class="location-action">{{ action }}</button>
   </div>
 </template>
@@ -36,6 +44,23 @@ defineProps<{
 }
 
 .location-name {
-  font-size: var(--font-lg);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--fg-primary);
+
+    &:hover {
+      color: var(--fg-secondary);
+    }
+  }
+
+  h2 {
+    font-size: var(--font-lg);
+  }
 }
 </style>

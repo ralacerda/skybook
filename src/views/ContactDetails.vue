@@ -12,6 +12,6 @@ const contactDetails = contactsStore.getContactById(id);
 
 <template>
   <main>
-    <LocationBar name="Detalhes" action="Editar" />
+    <LocationBar name="Detalhes" action="Editar" back-button />
   </main>
 </template>
