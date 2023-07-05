@@ -55,7 +55,7 @@ li:not(:last-of-type) {
   // Adiciona um "-" se informação está vazia
   & > :empty::after {
     content: "-";
-    opacity: 0.3;
+    opacity: 0.1;
   }
 }
 
