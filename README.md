@@ -53,22 +53,31 @@ O projeto foi publicado utilizando [Netlify][netlify], com builds criadas automa
 
 ## Recursos
 
+### Ações de Contato
+
+O Skybook possui recursos básicos de um gerenciador de contatos, permitindo editar, adicionar, remover e visualizar detalhes de cada contato.
+
+O aplicativo também inclui botões intuitivos que permitem realizar ligações ou enviar e-mails a partir das informações de contato de cada pessoa.
+
 ### Responsividade e UX
 
-O design se adapta a diferente [tipos de tela][responsive] e situações, permitindo uso tanto vertical como horizontal.
+O design se adapta a diferentes [tipos de tela][responsive], também considerando posicionamento da tela tanto verticalmente como horizontalmente.
 
-- Botões de ação estão sempre presente no topo, incluindo botões para voltar a telas anteriores, e o nome da página atual.
+Os recursos de interação e navegação estão sempre visíveis no topo da tela.
 
-Quando uma ação não está disponível (ligar ou mandar e-mail quando o contato não possui a informação), o ícone é desativado.
+Quando um contato não possui informações para fazer uma chamada ou enviar um e-mail, o ícone correspondente é desativado
 
 ### Ordernar e Buscar
 
-Aplicativo posui a opção de apresentar os dados por ordem de criação do contato ou ordem alfabética.
+O aplicativo possui opções de ordenação e busca, que facilitam a navegação e localização de contatos.
+
+É possível visualizar os contatos em quatro ordens diferentes: por ordem de criação (crescente ou decrescente), exibindo os mais recentes primeiro por padrão, ou em ordem alfabética (crescente ou decrescente) pelo nome dos contatos.
 
 ### Lidando com Erros
 
-Durante o desenvolvimento, Typescript ajudou.
-No runtime verificamos erros de conexão e erro no API.
+A utilização do Typescript durante o desenvolvimento auxiliou na detecção e prevenção de erros.
+
+Durante a inicialização do aplicativo, é realizado um fetch request para acessar um Mock API e obter o estado inicial da lista de contatos. Caso ocorra algum erro durante essa verificação, como falha na conexão ou resposta com status diferente de 200, uma mensagem de erro é exibida para notificar o usuário com informações sobre problema.
 
 ### Transições e Animações
 
@@ -76,12 +85,17 @@ Usando as capacidades de transições e animações do Vue, foi possível criar 
 
 ## Outras considerações
 
-que não foram implementadas devido a limitação de tempo do projeto, mas que poderiam ser consideradas.
+Existem alguns recursos ou melhorias que não foram implementadas devido à limitação de tempo do projeto, mas que poderiam ser consideradas:
 
-- Melhorar algorítimo de buscas
-- Poder adicionar outras informações
-- Botão de deletar deveria dar ao usuário um diálogo de confirmação, também permitindo prevemente que a ação seja desfeita
-- Para nosso caso, a unica limitação para criação ou edição de um contato é que haja um nome, sendo possível criar um contato com nome repetitido. Há um alerta para e-mail não validados, mas não impede a criação do contato.
+Utilizar um algoritmo de busca que possa rankear resultados, por exemplo, mostrando primeiro nomes que começam com o texto buscada.
+
+Permiter ordenar lista de contatos por acesso ou edição mais recente.
+
+Capacidade de incluir informações arbritárias para um contato, podendo ser diferente para cada contato.
+
+Implementar um diálogo de confirmação ao clicar no botão de exclusão, permitindo que o usuário tenha a oportunidade de confirmar a ação.
+
+A única restrição para a criação ou edição de um contato é que um nome seja fornecido. Isso significa que é possível criar contatos com nomes repetidos. Seria interessante adicionar uma validação para evitar a criação de contatos com nomes duplicados. Atualmente, um alerta é exibido apenas para e-mails não validados, mas a criação do contato ainda é permitida.
 
 [screenshot]: screenshot.webp
 [sass]: https://sass-lang.com/
