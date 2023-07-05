@@ -44,23 +44,12 @@ const computedList = computed(() => {
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 .contact-list {
   list-style: none;
-  overflow-y: scroll;
   scroll-behavior: smooth;
-
-  // Estilo da scrollbar para firefox
-  scrollbar-color: var(--brand-primary) var(--bg-primary);
-
-  // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--brand-primary);
-    border-radius: 10px;
-  }
+  @include scrollbar;
 }
 
 main {

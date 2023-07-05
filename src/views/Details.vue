@@ -30,6 +30,23 @@ function editContact() {
       backButton="/"
       @actionClicked="editContact"
     />
-    <ContactDetails :contact="contact" />
+    <div class="details-wrapper">
+      <ContactDetails :contact="contact" />
+    </div>
   </main>
 </template>
+
+<style scoped lang="scss">
+@import "../styles/mixins";
+
+.details-wrapper {
+  @include scrollbar;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+</style>

@@ -48,8 +48,10 @@ function updateContact(id: number) {
 </template>
 
 <style scoped lang="scss">
+@import "../styles/mixins";
+
 .editing-form {
-  overflow: scroll;
+  @include scrollbar;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--bg-secondary);

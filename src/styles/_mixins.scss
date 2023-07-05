@@ -14,3 +14,21 @@
     }
   }
 }
+
+// Estilo de scrollbar
+@mixin scrollbar {
+  overflow-y: scroll;
+
+  // Estilo da scrollbar para firefox
+  scrollbar-color: var(--brand-primary) var(--bg-primary);
+
+  // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--brand-primary);
+    border-radius: 10px;
+  }
+}
