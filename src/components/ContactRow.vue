@@ -22,8 +22,6 @@ defineProps<{
 
 <style scoped lang="scss">
 .contact-row {
-  color: inherit;
-  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
