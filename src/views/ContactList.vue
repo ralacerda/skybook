@@ -27,9 +27,9 @@ const computedList = computed(() => {
 <template>
   <main>
     <LocationBar />
-    <div>
-      <ListActions v-model:search="search" v-model:sorting="sorting" />
-      <ul class="contact-list">
+    <ListActions v-model:search="search" v-model:sorting="sorting" />
+    <div class="contact-list">
+      <ul>
         <template v-for="contact in computedList" :key="contact.id">
           <ContactRow :contact="contact" />
         </template>
@@ -41,5 +41,25 @@ const computedList = computed(() => {
 <style scoped lang="scss">
 .contact-list {
   list-style: none;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  // Estilo da scrollbar para firefox
+  scrollbar-color: var(--brand-primary) var(--bg-primary);
+
+  // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--brand-primary);
+    border-radius: 10px;
+  }
+}
+
+main {
+  grid-template-rows: auto auto 1fr;
+  display: grid;
 }
 </style>

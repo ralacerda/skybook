@@ -1,0 +1,30 @@
+.push-in-enter-active,
+.push-in-leave-active,
+.pop-out-enter-active,
+.pop-out-leave-active {
+  transition: transform 0.3s;
+  position: absolute;
+}
+
+.push-in-enter-active {
+  transition-timing-function: ease-out;
+}
+
+.pop-out-leave-active {
+  transition-timing-function: ease-out;
+}
+
+.push-in-enter-from,
+.pop-out-leave-to {
+  transform: translateX(720px);
+}
+
+.push-in-leave-active,
+.pop-out-enter-active {
+  z-index: -1;
+}
+
+.push-in-enter-active,
+.pop-out-leave-active {
+  z-index: 1;
+}

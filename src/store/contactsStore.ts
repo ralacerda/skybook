@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import type { Contact } from "../types";
 
 const url = "https://jsonplaceholder.typicode.com/users";
 // const url = "https://httpstat.us/404";
@@ -26,4 +27,15 @@ const contacts = await fetchContacts();
 
 export const useContactsStore = defineStore("contacts", {
   state: () => contacts,
+  actions: {
+    getContactById(id: number) {
+      const foundContact = this.list.find(
+        (contact: Contact) => contact.id === id
+      );
+      if (!foundContact) {
+        throw new Error("Contact ID not found");
+      }
+      return foundContact;
+    },
+  },
 });

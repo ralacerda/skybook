@@ -7,3 +7,10 @@ export type Contact = {
   phone?: string;
   [key: string]: string | number | undefined;
 };
+
+declare module "vue-router" {
+  interface RouteMeta {
+    depth: number;
+    transition?: string;
+  }
+}

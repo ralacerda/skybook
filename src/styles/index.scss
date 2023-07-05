@@ -1,6 +1,7 @@
 @import "reset";
 @import "utils";
 @import "variables";
+@import "transitions";
 
 :root {
   color: var(--fg-primary);
@@ -18,24 +19,10 @@
 }
 
 main {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow-y: scroll;
-  padding-right: 0.5rem;
-  margin-block: 1rem;
-
-  // Estilo da scrollbar para firefox
-  scrollbar-color: var(--brand-primary) var(--bg-primary);
-
-  // Estilo da scrollbar para webkit (chrome, edge, brave, etc)
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--brand-primary);
-    border-radius: 10px;
-  }
+  width: 100%;
+  background-color: var(--bg-dark);
+  min-height: 100%;
+  height: 100%;
 }
 
 button {
