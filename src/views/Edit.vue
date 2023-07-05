@@ -41,7 +41,7 @@ function updateContact(id: number) {
     <div class="editing-form">
       <EditingForm :contact="contactDetailsReactive" />
       <button @click="deleteContact(id)" class="delete-button">
-        Deletar Contato
+        Remover Contato
       </button>
     </div>
   </main>
