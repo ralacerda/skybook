@@ -51,6 +51,12 @@ li:not(:last-of-type) {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  // Adiciona um "-" se informação está vazia
+  & > :empty::after {
+    content: "-";
+    opacity: 0.3;
+  }
 }
 
 .contact-info > * {

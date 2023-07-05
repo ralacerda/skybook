@@ -74,9 +74,14 @@ function editContact() {
 .main-details {
   font-size: var(--font-md);
   margin-bottom: 1rem;
-
   display: flex;
   justify-content: space-between;
+
+  // Adiciona um "-" se informação está vazia
+  & > div > :empty::after {
+    content: "-";
+    opacity: 0.3;
+  }
 }
 
 .other-details {
