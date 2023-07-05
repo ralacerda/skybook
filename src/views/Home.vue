@@ -4,7 +4,6 @@ import { useListSort } from "../utils/useListSort";
 import LocationBar from "../components/LocationBar.vue";
 import ListActions from "../components/ListActions.vue";
 import ContactRow from "../components/ContactRow.vue";
-
 import { computed, ref } from "vue";
 import type { SortType, Contact } from "../types";
 
@@ -26,7 +25,11 @@ const computedList = computed(() => {
 
 <template>
   <main>
-    <LocationBar name="Contatos" action="Novo Contato" />
+    <LocationBar
+      name="Contatos"
+      action="Novo Contato"
+      @actionClicked="$router.push({ name: 'new' })"
+    />
     <ListActions v-model:search="search" v-model:sorting="sorting" />
     <div class="contact-list">
       <ul>

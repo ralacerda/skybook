@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Details from "../views/Details.vue";
 import About from "../views/About.vue";
 import Edit from "../views/Edit.vue";
+import New from "../views/New.vue";
 
 const routes = [
   {
@@ -27,6 +28,14 @@ const routes = [
     component: Edit,
     meta: {
       depth: 2,
+    },
+  },
+  {
+    name: "new",
+    path: "/criar",
+    component: New,
+    meta: {
+      depth: 3,
     },
   },
   {

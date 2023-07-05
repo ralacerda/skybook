@@ -26,7 +26,7 @@ async function fetchContacts() {
 const contacts = await fetchContacts();
 
 export const useContactsStore = defineStore("contacts", {
-  state: () => contacts,
+  state: () => ({ ...contacts, lastId: 10 }),
   actions: {
     getContactById(id: number) {
       const foundContact = this.list.find(
@@ -44,6 +44,10 @@ export const useContactsStore = defineStore("contacts", {
       // Aqui o assign() faz o papel de mudar o valor
       // das chaves, adicionando as que faltam
       Object.assign(this.getContactById(id), newValue);
+    },
+    createContact(details: Contact) {
+      this.list.push(details);
+      this.lastId++;
     },
   },
 });
