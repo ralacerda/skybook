@@ -7,6 +7,8 @@ defineProps<{
   action: string;
   backButton?: RouteLocationRaw;
 }>();
+
+defineEmits(["actionClicked"]);
 </script>
 
 <template>
@@ -17,7 +19,9 @@ defineProps<{
         {{ name }}
       </h2>
     </div>
-    <button class="location-action">{{ action }}</button>
+    <button class="location-action" @click="$emit('actionClicked')">
+      {{ action }}
+    </button>
   </div>
 </template>
 

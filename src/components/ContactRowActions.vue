@@ -25,9 +25,9 @@ function deleteContact(id: number) {
     <a :href="`mailto:${contact.email}`" :disabled="!contact.email">
       <EmailIcon />
     </a>
-    <button>
+    <RouterLink :to="{ name: 'edit', params: { id: contact.id } }">
       <EditIcon />
-    </button>
+    </RouterLink>
     <button data-delete @click="deleteContact(contact.id)">
       <DeleteIcon />
     </button>

@@ -2,7 +2,6 @@
 import { useRoute, useRouter } from "vue-router";
 import { useContactsStore } from "../store/contactsStore";
 import LocationBar from "../components/LocationBar.vue";
-import ContactDetailsActions from "../components/ContactDetailsActions.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -16,31 +15,23 @@ const contactDetails = contactsStore.getContactById(id);
 // temos id do contato baseado no route.params.id
 const { name, email, phone, id: _, ...otherDetails } = contactDetails;
 
-function editContact() {
-  router.push({
-    name: "edit",
-    params: {
-      id,
-    },
-  });
+function deleteContact(id: number) {
+  contactsStore.removeById(id);
+  router.push("/");
 }
 </script>
 
 <template>
   <main>
     <LocationBar
-      name="Detalhes"
-      action="Editar"
-      back-button="/"
-      @actionClicked="editContact"
+      name="Editar"
+      action="Salvar"
+      :back-button="{ name: 'details', params: { id: id } }"
     />
     <div class="main-details">
-      <div>
-        <h3>{{ name }}</h3>
-        <p>{{ email }}</p>
-        <p>{{ phone }}</p>
-      </div>
-      <ContactDetailsActions :email="email" :phone="phone" />
+      <h3>{{ name }}</h3>
+      <p>{{ email }}</p>
+      <p>{{ phone }}</p>
     </div>
 
     <div class="other-details">
@@ -58,6 +49,9 @@ function editContact() {
           <span class="value">{{ value }}</span></template
         >
       </div>
+      <button @click="deleteContact(id)" class="delete-button">
+        Delete Contact
+      </button>
     </div>
   </main>
 </template>
@@ -74,9 +68,6 @@ function editContact() {
 .main-details {
   font-size: var(--font-md);
   margin-bottom: 1rem;
-
-  display: flex;
-  justify-content: space-between;
 }
 
 .other-details {

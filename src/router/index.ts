@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import ContactList from "../views/ContactList.vue";
 import ContactDetails from "../views/ContactDetails.vue";
 import AboutPage from "../views/AboutPage.vue";
+import EditContact from "../views/EditContact.vue";
 
 const routes = [
   {
@@ -18,6 +19,14 @@ const routes = [
     component: ContactDetails,
     meta: {
       depth: 1,
+    },
+  },
+  {
+    name: "edit",
+    path: "/editar/:id",
+    component: EditContact,
+    meta: {
+      depth: 2,
     },
   },
   {
