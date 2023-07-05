@@ -8,18 +8,22 @@ defineProps<{
 </script>
 
 <template>
-  <li class="contact-row">
-    <div class="contact-info">
-      <div class="contact-name">{{ contact.name }}</div>
-      <div class="contact-phone">{{ contact.phone }}</div>
-      <div class="contact-email">{{ contact.email }}</div>
-    </div>
-    <ContactRowActions />
+  <li>
+    <router-link to="/details/5" class="contact-row">
+      <div class="contact-info">
+        <div class="contact-name">{{ contact.name }}</div>
+        <div class="contact-phone">{{ contact.phone }}</div>
+        <div class="contact-email">{{ contact.email }}</div>
+      </div>
+      <ContactRowActions />
+    </router-link>
   </li>
 </template>
 
 <style scoped lang="scss">
 .contact-row {
+  color: inherit;
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +34,13 @@ defineProps<{
   line-height: 1.4;
   cursor: pointer;
 
-  &:not(:last-of-type) {
-    margin-bottom: 1em;
-  }
-
   &:hover {
     background-color: var(--bg-accent);
   }
+}
+
+li:not(:last-of-type) {
+  margin-bottom: 1em;
 }
 
 .contact-phone,
