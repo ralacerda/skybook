@@ -5,6 +5,7 @@ import AboutPage from "../views/AboutPage.vue";
 
 const routes = [
   {
+    name: "home",
     path: "/",
     component: ContactList,
     meta: {
@@ -12,13 +13,15 @@ const routes = [
     },
   },
   {
-    path: "/details/:id",
+    name: "details",
+    path: "/detalhes/:id",
     component: ContactDetails,
     meta: {
       depth: 1,
     },
   },
   {
+    name: "about",
     path: "/sobre",
     component: AboutPage,
     meta: {

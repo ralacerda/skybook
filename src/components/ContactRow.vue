@@ -9,7 +9,10 @@ defineProps<{
 
 <template>
   <li>
-    <router-link to="/details/5" class="contact-row">
+    <router-link
+      :to="{ name: 'details', params: { id: contact.id } }"
+      class="contact-row"
+    >
       <div class="contact-info">
         <div class="contact-name">{{ contact.name }}</div>
         <div class="contact-phone">{{ contact.phone }}</div>
