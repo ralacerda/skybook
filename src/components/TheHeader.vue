@@ -3,7 +3,6 @@
     <h1><router-link to="/">Skybook</router-link></h1>
     <div class="header-links">
       <router-link to="/sobre">Sobre</router-link>
-      <router-link to="/sobre">Como usar</router-link>
     </div>
   </header>
 </template>
