@@ -28,3 +28,19 @@
 .pop-out-leave-active {
   z-index: 1;
 }
+
+.list-fade-move,
+.list-fade-enter-active,
+.list-fade-leave-active {
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.list-fade-enter-from,
+.list-fade-leave-to {
+  opacity: 0;
+}
+
+.list-fade-leave-active {
+  position: absolute;
+}

@@ -30,9 +30,11 @@ const computedList = computed(() => {
     <ListActions v-model:search="search" v-model:sorting="sorting" />
     <div class="contact-list">
       <ul>
-        <template v-for="contact in computedList" :key="contact.id">
-          <ContactRow :contact="contact" />
-        </template>
+        <TransitionGroup name="list-fade">
+          <template v-for="contact in computedList" :key="contact.id">
+            <ContactRow :contact="contact" />
+          </template>
+        </TransitionGroup>
       </ul>
     </div>
   </main>
