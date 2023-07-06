@@ -12,7 +12,7 @@
 
 O Skybook é o resultado de um desafio tecnico com o objetivo de criar um aplicativo de dashboard para gerenciamento de contatos.
 
-## Como instalar e usar
+## Rodando localmente
 
 Clone o repositório e instale as dependências ulitizando `npm` ou `pnpm`.
 
@@ -75,15 +75,15 @@ O aplicativo possui opções de ordenação e busca, que facilitam a navegação
 
 ### Lidando com Erros
 
-A utilização do Typescript durante o desenvolvimento auxiliou na detecção e prevenção de erros.
+Caso ocorra algum erro durante fetch request para acessar um Mock API e obter o estado inicial da lista de contatos, como falha na conexão ou resposta com status diferente de 200, uma mensagem de erro é exibida para notificar o usuário com informações sobre problema.
 
-Durante a inicialização do aplicativo, é realizado um fetch request para acessar um Mock API e obter o estado inicial da lista de contatos. Caso ocorra algum erro durante essa verificação, como falha na conexão ou resposta com status diferente de 200, uma mensagem de erro é exibida para notificar o usuário com informações sobre problema.
+Além disso, o uso de Typescript no código permite uma maior segurança durante o desenvolvimento.
 
 ### Transições e Animações
 
 Usando as capacidades de transições e animações do Vue, foi possível criar uma animação de transição entre as diferentes páginas. Cada página possui uma informação de profundidade, que é verificada durante a navegação para determinar qual transição deve ser utilizada. Além disso, há uma animação na lista durante buscar ou quando um contato é removido.
 
-## Outras considerações
+## Considerações
 
 Existem alguns recursos ou melhorias que não foram implementadas devido à limitação de tempo do projeto, mas que poderiam ser consideradas:
 
